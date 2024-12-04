@@ -1,8 +1,7 @@
+# Python Docs: https://docs.python.org
 # Selenuim Docs: https://www.selenium.dev/documentation/
 # Start here: https://www.selenium.dev/documentation/webdriver/getting_started/first_script/
 from selenium import webdriver
-import selenium.webdriver
-import selenium.webdriver.common
 from selenium.webdriver.common.by import By
 import selenium
 

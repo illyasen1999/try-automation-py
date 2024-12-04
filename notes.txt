@@ -2,6 +2,8 @@ Codespaces:
 - to run python in Github Codespaces type "python3 <filename>.py"
 - you can also use the "run" extension and click the play button on the top right
 
+Local Development:
+- create a virtual environment for local development(https://docs.python.org/3/library/venv.html)
 
 Python:
 - to run code either type "py <filename>.py" or "python3 <filename>.py"
