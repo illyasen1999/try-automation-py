@@ -3,7 +3,6 @@
 # Start here: https://www.selenium.dev/documentation/webdriver/getting_started/first_script/
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import selenium
 
 def try_automate():
     # Starting session on a browser(you can select multiple)
@@ -15,6 +14,7 @@ def try_automate():
 
     # requesting driver information
     title = driver.title
+    print(f"Title: {title}")
 
     # establish wating strategy
     driver.implicitly_wait(0.5)

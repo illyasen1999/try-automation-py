@@ -2,3 +2,7 @@
 
 Just trying web automation with Python and Seleium might create projects with theses 2 technologies
 
+<div>
+    <img src="assets/python-logo.png" width=100px> &nbsp;
+    <img src="assets/selenium-logo.png" width=100px> &nbsp;
+</div>
