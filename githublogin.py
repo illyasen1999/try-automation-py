@@ -1,9 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from dotenv import load_dotenv
 import os
+import time
 
-# TODO Find a way to grab the elements of the profile of the user 
 def git_login():
     # Loading environment variables
     load_dotenv()
@@ -37,28 +39,53 @@ def git_login():
     github_login_button.click()
 
     # Inside github
-    # github_right_menu = driver.find_element(by=By.CLASS_NAME, value="Button--invisible Button--medium Button Button--invisible-noVisuals color-bg-transparent p-0")
+    github_right_menu = driver.find_element(By.CSS_SELECTOR, ".AppHeader-user button")
+    github_wait_menu = WebDriverWait(driver, 10.0).until(EC.visibility_of(github_right_menu))
 
-    # print(f"{github_right_menu}")
+    print(f"GITHUB RIGHT MENU IS CLICKED!: {github_right_menu}")
 
-    # github_user_repo = driver.find_element(by=By.CLASS_NAME, value="Item__LiBox-sc-yeql7o-0 gajtZp")
+   
 
-    # print(f"{github_user_repo}")
 
-    # github_user_logout = driver.find_element(by=By.LINK_TEXT, value="/logout")
+    # driver.get("https://github.com/logout")
 
-    # print(f"{github_user_logout}")
+    # github_final_logout = driver.find_element(By.NAME, "commit")
+
+    # print(f"{github_final_logout}")
+
+    # Navigation sequence
+    github_right_menu.click()
+
+    # github_user_repo = driver.find_element(By.CSS_SELECTOR, ".List__ListBox-sc-1x7olzq-0 .gajtZp a")
+    github_user_repo = driver.find_element(By.CSS_SELECTOR, ".gajtZp a")
+    # github_user_repo = driver.find_element(By.CSS_SELECTOR, "il:nth-child(3n) a")
+
+    github_wait_repo = WebDriverWait(driver, 10.0).until(EC.visibility_of(github_user_repo))
+
+    # github_user_repo = locate_with(By.TAG_NAME, "a").near({By.CSS_SELECTOR: ".List__ListBox-sc-1x7olzq-0 .gajtZp"})
+
+    print(f"GITHUB USER REPO IS CLICKED!: {github_user_repo}")
+
+
+    github_user_repo.click()
+    # TODO: right menu not executing again
+    # github_right_menu.click()
+
+    time.sleep(15)
 
     driver.get("https://github.com/logout")
 
-    github_final_logout = driver.find_element(by=By.NAME, value="commit")
+    # TODO: find a way to select the logout button on the right menu
+    # github_user_logout = driver.find_element(By.CSS_SELECTOR, ".List__ListBox-sc-1x7olzq-0 li:last-child a")
+    # github_user_logout = driver.find_element(By.CSS_SELECTOR, "ul:last-child a")
 
-    print(f"{github_final_logout}")
+    # github_wait_logout = WebDriverWait(driver, 10.0).until(EC.visibility_of(github_user_logout))
 
-    # Navigation sequence
-    # github_right_menu.click()
-    # github_user_repo.click()
-    # github_right_menu.click()
+    # print(f"{github_user_logout}")
+
+    github_final_logout = driver.find_element(By.NAME, "commit")
+
+    github_wait_final_logout = WebDriverWait(driver, 10.0).until(EC.visibility_of(github_final_logout))
 
     # final 2 logouts
     # github_user_logout.click()
