@@ -20,7 +20,7 @@ Just trying web automation with Python and Seleium might create projects with th
 ## TODO
 <!-- Task List -->
 * [x] Login to Github
-* [ ] Go to the side menu
-* [ ] Go to repos
+* [x] Go to the side menu
+* [x] Go to repos
 * [x] Head to the logout screen
 * [x] Do a final logout
